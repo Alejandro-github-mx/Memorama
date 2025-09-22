@@ -23,34 +23,3 @@ pip install -r requirements.txt
 
 streamlit run memorama_streamlit_app.py
 
-# Características
-
-Profesor puede cargar 10, 20, 30 o 50 términos.
-
-Soporte opcional para imágenes.
-
-Cartas numeradas en orden ascendente.
-
-Animación inicial de mezcla.
-
-Animación y conteo al completar el tablero.
-
-
-**`memorama_streamlit_app.py`**  
-👉 Aquí pegarás el código que ya te preparé en el canvas.
-
----
-
-# Subir a GitHub
-1. Crear repo en GitHub:  
-   - Nombre: `Memorama`
-   - Sin README (ya lo tienes local).
-   - Público o privado, como prefieras.
-
-2. Conectar y subir:
-```bash
-git remote add origin https://github.com/TU-USUARIO/Memorama.git
-git add .
-git commit -m "Primer commit - estructura base del memorama"
-git branch -M main
-git push -u origin main
