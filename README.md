@@ -41,7 +41,7 @@ Animación y conteo al completar el tablero.
 
 ---
 
-# 6. Subir a GitHub
+# Subir a GitHub
 1. Crear repo en GitHub:  
    - Nombre: `Memorama`
    - Sin README (ya lo tienes local).
