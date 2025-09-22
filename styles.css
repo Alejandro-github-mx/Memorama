@@ -1,0 +1,125 @@
+/* ===== Cartas del Memorama ===== */
+.tile {
+  width: 100%;
+  height: 120px;
+  border-radius: 14px;
+  border: 2px solid #3f3f46;
+  background: #f5f5f5;                 /* dorso */
+  box-shadow: 2px 4px 8px rgba(0,0,0,.22);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+  background: #ececec;
+  box-shadow: 3px 6px 12px rgba(0,0,0,.28);
+}
+
+/* Cara descubierta (frente) */
+.tile.face-up {
+  background: #ffffff;
+  border-color: #2e86de;
+  box-shadow: 3px 6px 12px rgba(0,0,0,.30);
+  cursor: default;
+}
+
+/* Carta deshabilitada (ya encontrada) */
+.tile.disabled {
+  background: #d4edda;
+  border-color: #28a745;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* Contenido del término */
+.term { 
+  font-size: 14px; 
+  font-weight: 700; 
+  text-align: center; 
+  margin-top: 6px; 
+}
+.term small { font-weight: 600; opacity: .7; }
+.img { 
+  max-width: 100%; 
+  max-height: 60px; 
+  display:block; 
+  margin: 4px auto 0; 
+  border-radius: 8px; 
+}
+
+.muted { opacity: .75; }
+
+/* ============================= */
+/* Grid para acomodar las cartas */
+/* ============================= */
+.card-grid { display: grid; grid-gap: 10px; }
+
+@media (min-width: 1024px) {
+  .cols-6 { grid-template-columns: repeat(6, 1fr); }
+  .cols-8 { grid-template-columns: repeat(8, 1fr); }
+  .cols-10{ grid-template-columns: repeat(10, 1fr); }
+}
+@media (max-width: 1023px) {
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .cols-5 { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* ============================= */
+/* Animación de mezcla inicial   */
+/* ============================= */
+.shuffle .ghost-tile {
+  height: 60px; border-radius: 12px; margin: 6px; opacity: .85;
+  background: linear-gradient(45deg, #cad7ff, #e8ecff);
+  animation: wiggle 0.9s ease-in-out infinite alternate;
+}
+@keyframes wiggle {
+  from { transform: translate(-6px, 4px) rotate(-2deg); }
+  to   { transform: translate(6px, -4px) rotate(2deg); }
+}
+
+/* ============================= */
+/* Overlay de celebración        */
+/* ============================= */
+.celebrate {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background: radial-gradient(
+    ellipse at center, 
+    rgba(255,255,255,.0) 0%, 
+    rgba(255,255,255,.0) 60%, 
+    rgba(255,255,255,.85) 100%
+  );
+  animation: fadeout 1.8s ease forwards;
+}
+@keyframes fadeout { from {opacity: 1} to {opacity: 0} }
+
+/* Botones del tablero como fichas */
+#board .stButton > button {
+  width: 100%;
+  height: 120px;
+  border-radius: 14px;
+  border: 2px solid #3f3f46;
+  background: #f5f5f5;                 /* dorso */
+  box-shadow: 2px 4px 8px rgba(0,0,0,.22);
+  font-weight: 700;
+  font-size: 18px;
+  transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+}
+#board .stButton > button:hover {
+  transform: translateY(-2px);
+  background: #ececec;
+  box-shadow: 3px 6px 12px rgba(0,0,0,.28);
+}
+/* Cara (cuando está deshabilitado) */
+#board .stButton > button:disabled {
+  background: #ffffff;
+  border-color: #2e86de;
+  box-shadow: 3px 6px 12px rgba(0,0,0,.30);
+  cursor: default;
+  opacity: 1 !important; /* asegura que no se vea "apagado" */
+}
