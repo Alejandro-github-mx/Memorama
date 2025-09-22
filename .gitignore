@@ -1,0 +1,47 @@
+# Entorno virtual
+venv/
+.env/
+.venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Archivos de logs y caché
+*.log
+*.pot
+*.pyc
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Directorios de caché
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Configuración local de editores
+.vscode/
+.idea/
+*.iml
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Archivos de distribución
+dist/
+build/
